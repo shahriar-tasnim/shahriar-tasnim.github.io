@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+<title id="title">AI-enabled robotic quality sorting</title><desc id="desc">A robotic arm, camera, conveyor, and sorting containers.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e5f0ff"/><stop offset="1" stop-color="#f9fcff"/></linearGradient>
+  <linearGradient id="arm" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b5bd3"/><stop offset="1" stop-color="#11a6a2"/></linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#204775" flood-opacity=".15"/></filter>
+</defs>
+<rect width="900" height="620" rx="36" fill="url(#bg)"/>
+<g opacity=".35" stroke="#7ba9df" stroke-width="2"><path d="M50 100h800M50 200h800M50 300h800M50 400h800M50 500h800"/><path d="M150 50v520M300 50v520M450 50v520M600 50v520M750 50v520"/></g>
+<g filter="url(#shadow)">
+  <rect x="75" y="410" width="670" height="80" rx="18" fill="#183a61"/>
+  <rect x="96" y="430" width="628" height="20" rx="10" fill="#b9cee8"/>
+  <g fill="#6f89a8"><circle cx="135" cy="450" r="12"/><circle cx="200" cy="450" r="12"/><circle cx="265" cy="450" r="12"/><circle cx="330" cy="450" r="12"/><circle cx="395" cy="450" r="12"/><circle cx="460" cy="450" r="12"/><circle cx="525" cy="450" r="12"/><circle cx="590" cy="450" r="12"/><circle cx="655" cy="450" r="12"/></g>
+  <rect x="327" y="382" width="78" height="48" rx="9" fill="#ffb33b"/>
+  <path d="M346 398h40v18h-40z" fill="#fff2ce"/>
+  <rect x="110" y="490" width="610" height="20" rx="10" fill="#0b213d"/>
+</g>
+<g filter="url(#shadow)">
+  <ellipse cx="670" cy="484" rx="105" ry="25" fill="#19385d" opacity=".18"/>
+  <rect x="625" y="438" width="90" height="52" rx="14" fill="#204b78"/>
+  <path d="M670 447V330" stroke="url(#arm)" stroke-width="46" stroke-linecap="round"/>
+  <circle cx="670" cy="330" r="33" fill="#0b5bd3"/>
+  <path d="M657 315L550 252" stroke="url(#arm)" stroke-width="43" stroke-linecap="round"/>
+  <circle cx="550" cy="252" r="31" fill="#0d72d2"/>
+  <path d="M536 237L475 320" stroke="url(#arm)" stroke-width="39" stroke-linecap="round"/>
+  <circle cx="475" cy="320" r="27" fill="#11a6a2"/>
+  <path d="M464 336l-37 54" stroke="#173b61" stroke-width="24" stroke-linecap="round"/>
+  <path d="M417 382l-14 35m24-28 7 34" stroke="#173b61" stroke-width="9" stroke-linecap="round"/>
+</g>
+<g filter="url(#shadow)">
+  <rect x="272" y="75" width="125" height="74" rx="16" fill="#173b61"/>
+  <circle cx="334" cy="112" r="25" fill="#8fcaff"/><circle cx="334" cy="112" r="11" fill="#0b5bd3"/>
+  <path d="M334 149v80" stroke="#173b61" stroke-width="13"/>
+  <path d="M334 171L260 335M334 171l80 160" stroke="#39a8ef" stroke-width="3" stroke-dasharray="10 9" opacity=".7"/>
+</g>
+<g filter="url(#shadow)">
+  <rect x="742" y="368" width="105" height="142" rx="18" fill="#ef5b5b"/><rect x="746" y="360" width="97" height="25" rx="12" fill="#d64e4e"/>
+  <rect x="742" y="230" width="105" height="118" rx="18" fill="#4c8fe8"/><rect x="746" y="222" width="97" height="25" rx="12" fill="#397bcf"/>
+</g>
+<g transform="translate(82 68)"><rect width="145" height="50" rx="25" fill="#fff" opacity=".94"/><circle cx="26" cy="25" r="9" fill="#11a6a2"/><text x="46" y="31" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#183a61">Perceive</text></g>
+<g transform="translate(430 70)"><rect width="145" height="50" rx="25" fill="#fff" opacity=".94"/><circle cx="26" cy="25" r="9" fill="#0b5bd3"/><text x="46" y="31" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#183a61">Plan</text></g>
+<g transform="translate(650 70)"><rect width="150" height="50" rx="25" fill="#fff" opacity=".94"/><circle cx="26" cy="25" r="9" fill="#ffb33b"/><text x="46" y="31" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#183a61">Manipulate</text></g>
+</svg>
