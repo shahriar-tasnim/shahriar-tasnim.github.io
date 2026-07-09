@@ -4,11 +4,6 @@ A responsive engineering portfolio built with plain HTML, CSS, and JavaScript. I
 
 ## Live site repository
 
-For the clean portfolio address below, create a **public** repository named exactly:
-
-```text
-shahriar-tasnim.github.io
-```
 
 The published site address will be:
 
