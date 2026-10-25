@@ -1,0 +1,238 @@
+/* ==========================================================
+   upgrades.css — loaded after styles.css. Overrides only.
+   ========================================================== */
+
+/* ST monogram in the header tile */
+.brand-mark { display: grid; place-items: center; color: #fff; font-size: 0; }
+.brand-mark svg { width: 64%; height: auto; display: block; }
+
+/* Buttons were falling back to Arial */
+button, input, select, textarea { font-family: inherit; }
+
+/* ---------- Hero ---------- */
+
+.hero-title {
+  margin: 0;
+  font-size: clamp(2.7rem, 7vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -.045em;
+  font-weight: 850;
+}
+.hero-role {
+  display: block;
+  margin-top: 12px;
+  font-size: clamp(1.25rem, 2.6vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero-lead { margin-top: 22px; max-width: 600px; }
+
+/* Social links as pills */
+.social-links {
+  list-style: none;
+  padding: 0;
+  gap: 10px;
+}
+.social-links a {
+  display: inline-flex;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: .86rem;
+  transition: border-color .2s ease, color .2s ease, transform .2s ease;
+}
+.social-links a:hover,
+.social-links a:focus-visible { border-color: var(--primary); transform: translateY(-1px); }
+
+/* Portrait: contained, never a full screen tall */
+.hero-panel { max-width: 440px; justify-self: end; width: 100%; }
+.hero-visual { min-height: 0; aspect-ratio: 4 / 5; }
+.hero-visual img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 20%;
+  display: block;
+}
+
+/* Proof strip */
+.proof-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin: 64px 0 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--line);
+  position: relative;
+  z-index: 2;
+}
+.proof-strip > div { padding: 22px 24px; background: var(--surface); }
+.proof-strip dt {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 850;
+  letter-spacing: -.03em;
+  color: var(--primary);
+  line-height: 1.1;
+}
+.proof-strip dd { margin: 6px 0 0; color: var(--muted); font-size: .9rem; line-height: 1.45; }
+
+/* ---------- Projects: 1 featured + 3 across ---------- */
+.project-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.project-grid .project-card:not(.project-card-wide) .project-image { min-height: 220px; }
+.project-grid .project-card:not(.project-card-wide) .project-content h3 { font-size: 1.25rem; }
+.project-card { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.project-card:hover { transform: translateY(-4px); border-color: var(--primary); box-shadow: var(--shadow); }
+/* Featured project: demo video (dark navy background baked into the video).
+   Desktop: the video panel fills the left column at whatever height the text needs,
+   and the video is letterboxed inside it, so it can never spill under the text. */
+.project-card-wide { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: stretch; }
+.project-image-featured {
+  position: relative;
+  min-width: 0;
+  min-height: 320px;
+  padding: 0;
+  background: #060819;
+}
+.project-image-featured video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #060819;
+}
+.project-card-wide .project-content { padding: 28px 32px; align-self: center; }
+@media (max-width: 1100px) {
+  .project-card-wide { grid-template-columns: 1fr; }
+  /* Stacked: the panel takes the video's own 16:9 shape */
+  .project-image-featured { aspect-ratio: 16 / 9; min-height: 0; }
+}
+.card-actions { display: flex; flex-wrap: wrap; gap: 10px 20px; }
+
+/* ---------- Publications ---------- */
+.publication-pending { opacity: .75; }
+
+/* ---------- Education (same timeline as Experience, plus logos) ---------- */
+.edu-head { display: flex; align-items: center; gap: 16px; }
+.edu-head h3 { margin: 0; }
+.edu-head .organization { margin: 4px 0 0; }
+.edu-logo {
+  position: relative;
+  flex: 0 0 56px;
+  width: 56px; height: 56px;
+  display: grid; place-items: center;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;                 /* logos read best on white in both themes */
+  color: #07449e;
+  font-size: .78rem; font-weight: 850; letter-spacing: .02em;
+}
+.edu-logo img {
+  position: absolute; inset: 6px;
+  width: calc(100% - 12px); height: calc(100% - 12px);
+  object-fit: contain;
+  background: #fff;                 /* covers the initials when the logo loads */
+}
+.edu-list { margin: 14px 0 0; padding-left: 18px; color: var(--muted); }
+.edu-list li + li { margin-top: 8px; }
+
+/* ---------- Articles ---------- */
+.article-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.article-card {
+  display: flex; flex-direction: column;
+  padding: 26px 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: inherit; text-decoration: none;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.article-card:hover, .article-card:focus-visible { transform: translateY(-3px); border-color: var(--primary); box-shadow: var(--shadow); }
+.article-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; color: var(--muted); font-size: .84rem; font-weight: 650; }
+.article-tag { padding: 4px 10px; border-radius: 999px; background: var(--primary-soft); color: var(--primary); font-weight: 800; }
+.article-card h3 { margin: 16px 0 0; font-size: 1.22rem; line-height: 1.35; }
+.article-card p { margin: 10px 0 0; color: var(--muted); }
+.article-link { margin-top: auto; padding-top: 18px; color: var(--primary); font-weight: 800; font-size: .92rem; }
+
+/* ---------- Leadership: compact ---------- */
+.event-feature { grid-template-columns: 1fr 1fr; align-items: center; }
+.event-gallery .gallery-item { min-height: 0; aspect-ratio: 4 / 3; }
+
+/* ---------- Contact: readable in dark mode ---------- */
+[data-theme="dark"] .contact-card {
+  background: linear-gradient(135deg, #0b3a7a, #0b5bd3 60%, #0f7d8f);
+}
+.contact-card p:not(.eyebrow) { color: #eef5ff; }
+/* "Email me" was light-blue text on white in dark mode */
+[data-theme="dark"] .button-light { color: #07449e; }
+
+/* ---------- Section rhythm (tighter: was 108px top + bottom) ---------- */
+.section { padding: 64px 0; }
+.section-heading { margin-bottom: 32px; }
+.hero { min-height: 0; padding-top: 56px; padding-bottom: 56px; }
+.proof-strip { margin-top: 44px; }
+.focus-grid { margin-top: 24px; }
+.site-footer { padding-top: 28px; padding-bottom: 28px; }
+.contact-section { padding-top: 16px; }  /* was 55px on top of the previous section's bottom padding */
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* Last card would sit alone: lay it out horizontally across the row */
+  .project-grid .project-card:last-child:nth-child(even) {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: .95fr 1.05fr;
+  }
+}
+
+/* Show the full nav on tablets / narrow laptops instead of a hamburger */
+@media (min-width: 941px) and (max-width: 980px) {
+  .site-nav {
+    position: static; display: flex; flex-direction: row; align-items: center;
+    gap: 18px; padding: 0; border: 0; background: none; box-shadow: none;
+    font-size: .88rem;
+  }
+  .site-nav a { padding: 0; }
+  .theme-toggle { margin-top: 0; }
+  .nav-toggle { display: none; }
+}
+
+@media (max-width: 980px) {
+  /* Small portrait above the name instead of a giant one below */
+  .hero-grid { gap: 28px; }
+  .hero-panel {
+    order: -1; justify-self: start;
+    max-width: 168px; padding: 8px; border-radius: 24px;
+  }
+  .hero-visual { border-radius: 18px; aspect-ratio: 1 / 1; }
+  .proof-strip { grid-template-columns: repeat(2, 1fr); margin-top: 36px; }
+  .event-feature { grid-template-columns: 1fr; }
+  .section { padding: 52px 0; }
+  .hero { padding-top: 40px; padding-bottom: 44px; }
+}
+
+@media (max-width: 720px) {
+  .project-grid { grid-template-columns: 1fr; }
+  .project-grid .project-card:last-child:nth-child(even) { display: block; }
+  .article-grid { grid-template-columns: 1fr; }
+  .article-card { padding: 22px; }
+  .edu-logo { flex-basis: 44px; width: 44px; height: 44px; border-radius: 12px; }
+  .hero-panel { max-width: 132px; }
+  .section { padding: 40px 0; }
+  .section-heading { margin-bottom: 24px; }
+  .hero { padding-top: 28px; padding-bottom: 36px; }
+}
+
+@media (max-width: 480px) {
+  .proof-strip { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card, .social-links a, .article-card { transition: none; }
+  .project-card:hover, .social-links a:hover, .article-card:hover { transform: none; }
+}
